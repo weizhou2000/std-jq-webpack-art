@@ -3,12 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
+var fs=require('fs')
+var ver=new Date().getTime()
+fs.writeFileSync('./source/_data/h5.json',JSON.stringify({ver}))
+
 module.exports = {
   entry: {
-     index: './src/index.js',
-     //t: './src/t.js'
-        //library: 'template',
-    //libraryTarget: 'umd'
+     cart: './src/cart/main.js',
+     checkout: './src/checkout/main.js',
+     orders: './src/orders/main.js',
+     //library: 'template',
+     //libraryTarget: 'umd'
    },
    //devtool: 'inline-source-map',
    devtool: 'source-map',
